@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from handl_resources import fetch_formats
 
 app = Flask(__name__)
 
