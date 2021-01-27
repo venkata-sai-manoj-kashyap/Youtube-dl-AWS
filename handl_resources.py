@@ -13,7 +13,7 @@ def fetch_formats(link):
     for line in output.split("\n")[3:]:
         if line.strip() and "video only" not in line and "audio only" not in line:
             format_code, resolution, notes = re.search("(\d+)\s+(\w+)\s+(.*)", line).groups()
-            result.append("   ".join([format_code, resolution, notes]))
+            result.append([format_code, resolution, notes])
 
     return result
 
