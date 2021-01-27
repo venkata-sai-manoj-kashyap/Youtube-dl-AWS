@@ -37,11 +37,11 @@ def download_file_from_link(link, format_code):
     """
     path = check_for_existing_file(link)
     if path is None:
-        subprocess.check_output(['youtube-dl', '-f', format_code, '-o', expanduser("~/Downloads/") + "%(title)s.%(ext)s"])
+        subprocess.check_output(['youtube-dl', '-f', format_code, '-o', expanduser("~/Downloads/") + "%(title)s.%(ext)s", link])
         path = check_for_existing_file(link)
 
     if path is None:
-        raise ValueError("Something went wrong when Trying to fetch Download")
+        raise ValueError("Something went wrong when trying to fetch Download")
     return path
 
 
@@ -53,7 +53,7 @@ def check_for_existing_file(link):
     """
     file_name = subprocess.check_output(['youtube-dl', '--get-filename', link]).decode("utf-8")
     list_of_files = get_files_from_downloads()
-    file_name_without_format = re.search("(.*)\.(webm|mp4)", file_name)
+    file_name_without_format = re.search("(.*)--(\w+)\.(webm|mp4)", file_name, re.I)
     if file_name_without_format is None:
         raise ValueError(f"Unknown file format encountered. Name:{file_name}")
 
