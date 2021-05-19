@@ -38,7 +38,7 @@ def download_file():
 @app.route('/stream')
 def stream_file():
     if 'download' in session:
-        return render_template('stream.html', link=session['download'])
+        return render_template('stream.html', link=session['download'].rsplit("/")[-1])
     else:
         return redirect(url_for('/', _method="GET"))
 

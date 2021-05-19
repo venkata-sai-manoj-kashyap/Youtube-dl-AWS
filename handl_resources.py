@@ -40,7 +40,7 @@ def download_file_from_link(link, format_code=22):
         filename = filename_from_link(link)
         subprocess.check_output(['youtube-dl', '-f', format_code,
                                  '-o', "/home/ubuntu/Youtube-dl-AWS/static/" + filename, link])
-        path = "/home/ubuntu/Youtube-dl-AWS/static/" + filename
+        path = "/home/ubuntu/Youtube-dl-AWS/static/" + filename + ".mp4"
 
     return path
 
