@@ -36,7 +36,7 @@ def download_file():
 
 
 @app.route('/stream')
-def download_file():
+def stream_file():
     if 'download' in session:
         return render_template('stream.html', link=session['download'])
     else:

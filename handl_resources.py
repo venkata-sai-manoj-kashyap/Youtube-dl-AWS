@@ -1,7 +1,6 @@
 import subprocess
 import re
 from dateutil.parser import parse
-import uuid
 
 
 def fetch_formats(link):
