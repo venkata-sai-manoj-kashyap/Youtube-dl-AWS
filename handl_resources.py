@@ -66,7 +66,7 @@ def filename_from_link(link):
         else:
             file = "Unknown File"
 
-    return file + " " + datetime_result
+    return file + " " + datetime_result + ".mp4"
 
 
 def check_for_existing_file(link):
