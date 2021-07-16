@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+    <table>
+        <thead>
+            <td> Format Code </td>
+            <td> Resolution </td>
+            <td> Notes </td>
+        </thead>
+    {% for format_code, resolution, notes in available_formats %}
+    <tr>
+      <td>{{ format_code }}</td>
+      <td>{{ resolution }}</td>
+      <td>{{ notes }}</td>
+    </tr>
+    {% endfor %}
+    </table>
+
+
+
+    <form action='/download_link' method='POST'>
+    <label for="text">Input_Num:</label>
+    <input type="text" id="text" name="Input_Num"><br><br>
+
+    <input type="submit" value="Submit">
+    </form>
+</head>
+<body>
+
+</body>
+</html>
